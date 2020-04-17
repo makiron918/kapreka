@@ -6,14 +6,12 @@ def kapreka(n)
     if result.member?(kap)
       return result.push(kap)
     else
-      return kapreka(kap, result.push(kap))
+      return kapreka_re(kap, result.push(kap))
     end
   end
 
-  kapreka_re(n, [])
+  kapreka_re(num, [])
 end
 
-puts "3桁以上の整数を入力してください"
-n = gets.chomp
-kapreka(n)
+kapreka(156)
 
