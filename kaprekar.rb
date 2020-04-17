@@ -3,12 +3,20 @@
 # ・求めたカプレカ数を出力させるプログラム（puts）を書く
 
 def input_num
-  input = gets.to_i
-  if input < 0 || input > 100000000000000
-    puts "無効な値です。"
+  input = gets.to_s
+  # kap = []
+  # kap << input
+  min = input.to_s.split("").sort.join.to_i
+  max = input.to_s.split("").sort.reverse.join.to_i
+  if max - min > input.to_i
+    diff = max - min
+  else
+    return diff
   end
 end
 
-def cul_num
-end
+# min = 152.to_s.split("").sort.join.to_i
+# max = 152.to_s.split("").sort.reverse.join.to_i
+# puts max - min
+input_num
 
