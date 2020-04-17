@@ -9,3 +9,6 @@ def kapreka(n, result)
   end
 end
 
+puts "3桁以上の整数を入力してください"
+kapreka(n, result)
+
