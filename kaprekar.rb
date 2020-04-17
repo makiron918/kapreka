@@ -19,8 +19,5 @@ def input_num
   puts result
 end
 
-# min = 152.to_s.split("").sort.join.to_i
-# max = 152.to_s.split("").sort.reverse.join.to_i
-# puts max - min
 input_num
 
