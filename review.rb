@@ -6,3 +6,7 @@ line = "---------------------------"
 puts "ジャンル：#{genre}\n#{line}"
 puts "タイトル：#{title}\n#{line}"
 puts "感想：\n#{review}\n#{line}"
+
+genre = gets.chomp
+title = gets.chomp
+review = gets.chomp
