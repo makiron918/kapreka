@@ -1,4 +1,4 @@
-def post_review
+def post_review(a_posts)
   post = {}
 
   puts "ジャンルを入力してください："
@@ -12,6 +12,10 @@ def post_review
   puts "ジャンル：#{post[:genre]}\n#{line}"
   puts "タイトル：#{post[:title]}\n#{line}"
   puts "感想：\n#{post[:review]}\n#{line}"
+
+  a_posts << post
+
+  return a_posts
 end
 
 def read_reviews
@@ -26,15 +30,17 @@ def exception
   puts "無効な値です"
 end
 
+posts = []
+
 while true do
-  puts "レビュー数：0"
+  puts "レビュー数：#{posts.length}"
   puts "[0]レビューを書く"
   puts "[1]レビューを読む"
   puts "[2]アプリを終了する"
   input = gets.to_i
 
   if input == 0 
-    post_review
+    posts = post_review(posts)
   elsif input == 1
     read_reviews
   elsif input == 2
