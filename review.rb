@@ -18,8 +18,12 @@ def post_review(a_posts)
   return a_posts
 end
 
-def read_reviews
-  # レビューを読む
+def read_reviews(a_posts)
+  num = 0
+  a_posts.each do |post|
+    puts "[#{num}]:#{post[:title]}のレビュー"
+    num += 1
+  end
 end
 
 def end_program
@@ -42,7 +46,7 @@ while true do
   if input == 0 
     posts = post_review(posts)
   elsif input == 1
-    read_reviews
+    read_reviews(posts)
   elsif input == 2
     end_program
   else
