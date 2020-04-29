@@ -14,7 +14,17 @@ def post_review
   puts "感想：\n#{post[:review]}\n#{line}"
 end
 
+def read_reviews
+  # レビューを読む
+end
 
+def end_program
+  # プログラムを終了
+end
+
+def exception
+  puts "無効な値です"
+end
 
 puts "レビュー数：0"
 puts "[0]レビューを書く"
@@ -25,11 +35,11 @@ input = gets.to_i
 if input == 0 
   post_review
 elsif input == 1
-  # レビューを読む
+  read_reviews
 elsif input == 2
-  # プログラムを終了
+  end_program
 else
-  puts "無効な値です"
+  exception
 end
 
 
