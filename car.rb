@@ -46,12 +46,11 @@ end
 
 
 def calculate_fuel_consumption(car, distance )
-  # 目的地までのガソリンの消費量を計算する関数を完成させなさい
   puts "その目的地までは、ガゾリンを#{}L消費します。"
 end
 
 def car_capacity(car, capacity)
-  # 車に乗ることが出来る人数について、後何人乗ることが出来るのか、丁度乗ることが出来る人数なのか、もしくは何人定員オーバーなのかを出力する関数を完成させなさい
+  
 end
 
 cars = []
@@ -65,11 +64,11 @@ while true do
   input = gets.chomp
   case input
   when "0"
-    # 車種を登録するための関数を呼び出しなさい。
+    register_data(cars)
   when "1"
-    # 保存したデータを一覧で表示するための関数を呼び出しなさい。
+    show_cars(cars)
   when "2"
-    # アプリケーションを終了させなさい。
+    exit
   else
     puts "無効な値です"
   end
