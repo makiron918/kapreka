@@ -25,13 +25,15 @@ def show_books(books)
   show_detail(books[input - 1])
 end
 
-def show_detail
-  puts "タイトル：#{title}"
-  puts "著者：#{author}"
-  puts "価格：#{price}"
+def show_detail(book)
+  puts "タイトル：#{book[:title]}"
+  puts "著者：#{book[:author]}"
+  puts "価格：#{book[:price]}"
 end
 
 def average_price
+  total = 0
+  
   average = books[:price] / books.length
 end
 
