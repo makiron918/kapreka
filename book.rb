@@ -31,10 +31,12 @@ def show_detail(book)
   puts "価格：#{book[:price]}"
 end
 
-def average_price
+def average_price(books)
   total = 0
-  
-  average = books[:price] / books.length
+  books.each do |book|
+    total += book[:price]
+  end
+  average = total / books.length
 end
 
 books = []
