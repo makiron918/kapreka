@@ -1,13 +1,22 @@
 def register_data(cars)
-  # 車を登録するための関数を完成させなさい
+  car = {}
+  puts "車種を入力してください"
+  car[:type] = gets.chomp
+  puts "１Lあたりの走行距離を入力してください"
+  car[:distance] = gets.to_f
+  puts "乗車人数を入力してください"
+  car[:person] = gets.to_i
   # 1Lあたりの走行距離については、少数を扱うことが出来るようにto_fを扱い、乗車人数に関しては、to_iを使用すること
+  cars << car
 end
 
 def show_cars(cars)
   # 保存した車種の一覧を表示するための関数を完成させなさい
-
   # 確認したい番号を入力した後に、show_dataの関数を呼び出すようにしなさい
   puts "確認したい番号を入力して下さい。"
+  index = 1
+  cars.each do |car|
+    puts "#{index}：#{car[:type]}"
 
 end
 
