@@ -43,16 +43,18 @@ end
 
 
 def calculate_fuel_consumption(car, distance )
-  time = input_distance / car[:fuel]
-  puts "その目的地までは、ガゾリンを#{}L消費します。"
+  used_fuel = distance / car[:fuel]
+  puts "その目的地までは、ガゾリンを#{used_fuel.round(1)}L消費します。"
 end
 
 def car_capacity(car, capacity)
-  capacity = car[:capacity] - input_capacity
-  if capacity >= 0
+  capacity = car[:capacity] - capacity
+  if capacity > 0
     puts "あと#{capacity}人乗ることができます"
+  elsif capacity == 0
+    puts "定員ちょうどです"
   else
-    puts "#{capacity}人オーバーしています"
+    puts "#{capacity.abs}人オーバーしています"
   end
 end
 
