@@ -1,9 +1,16 @@
 	
 def register_book
   # 本の著者、タイトル、価格をユーザーに入力させ、保存する
+
+  book = []
+
   puts '著者を入力してください'
+  book[:author] = gets.chomp
   puts 'タイトルを入力してください'
+  book[:title] = gets.chomp
   puts '価格を入力してください'
+  book[:price] = gets.to_i
+  
 end
 
 def show_books(books)
@@ -26,7 +33,7 @@ while true do
   puts "2: 終了する"
   case gets.to_i
   when 0
-    # 本の登録を行う
+    register_book
   when 1
     # 保存された本の一覧を出力する
   when 2
