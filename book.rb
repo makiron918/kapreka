@@ -1,8 +1,8 @@
 	
-def register_book
+def register_book(books)
   # 本の著者、タイトル、価格をユーザーに入力させ、保存する
 
-  book = []
+  book = {}
 
   puts '著者を入力してください'
   book[:author] = gets.chomp
@@ -10,21 +10,25 @@ def register_book
   book[:title] = gets.chomp
   puts '価格を入力してください'
   book[:price] = gets.to_i
-  
+
 end
 
 def show_books(books)
   puts "見たい番号を入力してください"
-  # 保存された本の一覧を出力する
+  num = gets.to_i
 end
 
 def show_detail
-  # 選択された本の詳細な情報（著者、タイトル、価格）を出力する
+  puts "タイトル：#{title}"
+  puts "著者：#{author}"
+  puts "価格：#{price}"
 end
 
 def average_price
-  # 全ての本の平均価格を算出する
+  average = books[:price] / books.length
 end
+
+books = []
 
 while true do
   puts "番号を入力してください"
@@ -33,9 +37,9 @@ while true do
   puts "2: 終了する"
   case gets.to_i
   when 0
-    register_book
+    register_book(books)
   when 1
-    # 保存された本の一覧を出力する
+    show_books(books)
   when 2
     exit
   else
