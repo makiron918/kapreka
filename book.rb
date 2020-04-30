@@ -11,11 +11,18 @@ def register_book(books)
   puts '価格を入力してください'
   book[:price] = gets.to_i
 
+  books << book
 end
 
 def show_books(books)
   puts "見たい番号を入力してください"
-  num = gets.to_i
+  index = 1
+  books.each do |book|
+    puts "#{index}：#{book[:title]}"
+    index += 1
+  end
+  input = gets.to_i
+  show_detail(books[input - 1])
 end
 
 def show_detail
