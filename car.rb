@@ -17,12 +17,17 @@ def show_cars(cars)
   index = 1
   cars.each do |car|
     puts "#{index}：#{car[:type]}"
-
+    index += 1
+  end
+  input = gets.to_i
+  show_data(cars[input - 1])
 end
 
 def show_data(car)
   # 一覧から選択された車の全ての情報を表示する関数を完成させなさい
-
+  puts "車種：#{car[:type]}"
+  puts "1Lあたりの走行距離：#{car[:distance]}"
+  puts "乗車人数：#{car[:person]}"
   puts "これから走る距離(km)を入力して下さい。"
   input_distance = gets.to_f
 
@@ -30,6 +35,13 @@ def show_data(car)
   input_capacity = gets.to_i
 
   # 目的地までの時間を計算する関数と乗車人数を計算する関数を呼び出して下さい
+  time = input_distance / car[:distance]
+  capacity = car[:person] - input_capacity
+  if capacity >= 0
+    puts "あと#{capacity}人乗ることができます"
+  else
+    puts "#{capacity}人オーバーしています"
+  end
 end
 
 
