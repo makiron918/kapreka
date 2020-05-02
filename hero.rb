@@ -49,12 +49,12 @@ def show_data_list(data)
     index += 1
   end
   puts "見たい番号を入力してください"
-  input = gets.to_i
+  input = gets.to_i - 1
   hero = data[input]
   puts "名前：#{hero[:name]}"
   puts "パンチ力：#{hero[:punch]}"
   puts "キック力：#{hero[:kick]}"
-  puts "ジャンプ力：#{hero[jump]}"
+  puts "ジャンプ力：#{hero[:jump]}"
   puts "ヒーローランク：#{hero[:rank]}"
 
 end
