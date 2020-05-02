@@ -1,41 +1,41 @@
 def register_data(data)
-hero = {}
-  # 名前、パンチ力、キック力、ジャンプ力をユーザーに入力させ、保存する。
+
   puts "名前を入力してください"
-  hero[:name] = gets.chomp
+  name = gets.chomp
   puts "パンチ力を入力してください(0 ~ 100)"
-  hero[:punch] = gets.to_i
+  punch = power(gets.to_i)
   puts "キック力を入力してください(0 ~ 100)"
-  hero[:kick] = gets.to_i
+  kick = power(gets.to_i)
   puts "ジャンプ力を入力してください(0 ~ 100)"
-  hero[:jump] = gets.to_i
+  jump = power(gets.to_i)
+  hero = {name: name, punch: punch, kick: kick, jump: jump, rank: hero_rank(punch, kick, jump)}
 
   data << hero
 
 end
 
 
-def power(punch, kick, jump)
+def power(power)
 
-  # 入力された数字が0~100になるまで繰り返し入力させる。
-  while hero[:punch] <= 100 && hero[:kick] <= 100 && hero[:jump] <= 100 do 
+  while power > 100
     puts "100以下の数字を入力してください"
+    power = gets.to_i
   end
-
+  return power
 end
 
 
 def hero_rank(punch, kick, jump)
 
-  rank = hero[:punch] + hero[:kick] + hero[:jump]
-  if rank == 300
-    hero[:rank] = A
-  elsif 100 <= rank && rank < 300
-    hero[:rank] = B
-  elsif 20 <= rank && rank < 100
-    hero[:rank] = C
+  power = punch + kick + jump
+  if power == 300
+    rank = "A"
+  elsif 100 <= power && power < 300
+    rank = "B"
+  elsif 20 <= power && power < 100
+    rank = "C"
   else
-    hero[:rank] = D
+    rank = "D"
   end
 
 end
@@ -50,15 +50,12 @@ def show_data_list(data)
   end
   puts "見たい番号を入力してください"
   input = gets.to_i
-  if input = index
-    puts "名前：#{hero[:name]}"
-    puts "パンチ力：#{hero[:punch]}"
-    puts "キック力：#{hero[:kick]}"
-    puts "ジャンプ力：#{hero[jump]}"
-    puts "ヒーローランク：#{hero[:rank]}"
-  end
-
-  # 選択されたデータの詳細な情報（名前、パンチ力、キック力、ジャンプ力、ヒーロランク）を出力する。
+  hero = data[input]
+  puts "名前：#{hero[:name]}"
+  puts "パンチ力：#{hero[:punch]}"
+  puts "キック力：#{hero[:kick]}"
+  puts "ジャンプ力：#{hero[jump]}"
+  puts "ヒーローランク：#{hero[:rank]}"
 
 end
 
