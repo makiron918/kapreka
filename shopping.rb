@@ -1,35 +1,35 @@
 def post_review(a_cart)
   # 商品名、値段、個数を入力させ合計金額を出し、配列に保存してください。
   post = {}
-    puts "商品名を入力してください："
-    post[:name] = gets.chomp
-    puts "値段を入力してください："
-    post[:price] = gets.to_i
-    puts "個数を入力してください："
-    post[:num] = gets.to_i
-  
-    line = "---------------------------"
-  
-    puts "商品名 : #{post[:name}\n#{line}"
-    puts "値段 : #{post[:price]}\n#{line}"
-    puts "個数 : #{post[:num]}\n#{line}"
-    puts "合計金額 : #{post[:price] * post[:num]}\n#{line}"
-  
+  puts "商品名を入力してください："
+  post[:name] = gets.chomp
+  puts "値段を入力してください："
+  post[:price] = gets.to_i
+  puts "個数を入力してください："
+  post[:num] = gets.to_i
+
+  line = "---------------------------"
+
+  puts "商品名 : #{post[:name]}\n#{line}"
+  puts "値段 : #{post[:price]}\n#{line}"
+  puts "個数 : #{post[:num]}\n#{line}"
+  puts "合計金額 : #{post[:price] * post[:num]}\n#{line}"
+
   a_cart << post
-  
+
   return a_cart
   
   end
   
   def check_reviews(a_cart)
-  total_price = 0
-  line = "---------------------------"
-  a_cart.each do |item|
-    puts "#{item[:name]}"
-    puts "#{item[:price]}"
-    puts "#{item[:num]}\n#{line}"
-    total_price += item[:price]
-  end
+    total_price = 0
+    line = "---------------------------"
+    a_cart.each do |item|
+      puts "#{item[:name]}"
+      puts "#{item[:price]}"
+      puts "#{item[:num]}\n#{line}"
+      total_price += item[:price]
+    end
     puts "合計金額 : #{total_price}"
   
     puts "[0]購入確定する"
