@@ -10,22 +10,18 @@ def post_review(a_cart)
   
     line = "---------------------------"
   
-  # 入力された値の描画
     puts "商品名 : #{post[:name}\n#{line}"
     puts "値段 : #{post[:price]}\n#{line}"
     puts "個数 : #{post[:num]}\n#{line}"
     puts "合計金額 : #{post[:price] * post[:num]}\n#{line}"
   
-  # 配列オブジェクトに追加
   a_cart << post
   
-  # a_cartをメソッドの呼び出し元に返す
   return a_cart
   
   end
   
   def check_reviews(a_cart)
-  # 保存された全商品の一覧を表示
   total_price = 0
   line = "---------------------------"
   a_cart.each do |item|
@@ -53,21 +49,16 @@ def post_review(a_cart)
     puts "合計金額 : #{total_price}"
     puts "支払う金額を入力してください："
     input = gets.to_i
-  # if文を使用し条件ごとの処理を実行
+
     if input >= total_price
-  # ユーザーに支払う金額を入力させ合計金額からマイナスしてください
-  # お釣りを表示してください
       puts "お釣り : #{input - total_price}円"
     else
       puts "お金が足りません。"
       buy_program(total_price)
     end
-  
-  # 金額が足りない場合はもう一度、buy_program(total_price)を実行
   end
   
   def end_program
-    # プログラムを終了する記述
     exit
   end
   
