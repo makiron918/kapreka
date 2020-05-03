@@ -11,10 +11,10 @@ def post_review(a_cart)
     line = "---------------------------"
   
   # 入力された値の描画
-    puts "商品名 : #{post[:name}"
-    puts "値段 : #{post[:price]}"
-    puts "個数 : #{post[:num]}"
-    puts "合計金額 : #{post[:price] * post[:num]}"
+    puts "商品名 : #{post[:name}\n#{line}"
+    puts "値段 : #{post[:price]}\n#{line}"
+    puts "個数 : #{post[:num]}\n#{line}"
+    puts "合計金額 : #{post[:price] * post[:num]}\n#{line}"
   
   # 配列オブジェクトに追加
   a_cart << post
@@ -26,16 +26,15 @@ def post_review(a_cart)
   
   def check_reviews(a_cart)
   # 保存された全商品の一覧を表示
+  total_price = 0
+  line = "---------------------------"
   a_cart.each do |item|
     puts "#{item[:name]}"
     puts "#{item[:price]}"
-    puts "#{item[:num]}"
-    total += item[:price]
+    puts "#{item[:num]}\n#{line}"
+    total_price += item[:price]
   end
-  # 商品名、値段、個数を表示
-  
-  # 全ての商品の合計金額を表示
-    puts "合計金額 : #{total}"
+    puts "合計金額 : #{total_price}"
   
     puts "[0]購入確定する"
     puts "[1]買い物を続ける"
@@ -44,7 +43,7 @@ def post_review(a_cart)
     if input == 0
       buy_program(total_price)
     elsif input == 1
-      return post_review
+      return
     else
       exception
     end
