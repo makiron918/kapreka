@@ -28,10 +28,14 @@ def post_review(a_cart)
   # 保存された全商品の一覧を表示
   a_cart.each do |item|
     puts "#{item[:name]}"
+    puts "#{item[:price]}"
+    puts "#{item[:num]}"
+    total += item[:price]
+  end
   # 商品名、値段、個数を表示
   
   # 全ての商品の合計金額を表示
-    puts "合計金額 : "
+    puts "合計金額 : #{total}"
   
     puts "[0]購入確定する"
     puts "[1]買い物を続ける"
@@ -40,26 +44,32 @@ def post_review(a_cart)
     if input == 0
       buy_program(total_price)
     elsif input == 1
-      return
+      return post_review
     else
       exception
     end
   end
   
   def buy_program(total_price)
-    puts "合計金額 : "
+    puts "合計金額 : #{total_price}"
     puts "支払う金額を入力してください："
     input = gets.to_i
   # if文を使用し条件ごとの処理を実行
+    if input >= total_price
   # ユーザーに支払う金額を入力させ合計金額からマイナスしてください
   # お釣りを表示してください
-    puts "お釣り : "
+      puts "お釣り : #{input - total_price}円"
+    else
+      puts "お金が足りません。"
+      buy_program(total_price)
+    end
   
   # 金額が足りない場合はもう一度、buy_program(total_price)を実行
   end
   
   def end_program
     # プログラムを終了する記述
+    exit
   end
   
   def exception
