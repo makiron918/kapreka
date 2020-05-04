@@ -24,7 +24,7 @@ def show_student_name(students)
     index += 1
   end
   puts '見たい生徒の番号を入力してください'
-  input = gets.to_i
+  input = gets.to_i - 1
   student = students[input]
 
   # 選択された生徒の名前、年齢、国語、数学、英語の点数を表示できるようにしなさい
