@@ -45,11 +45,11 @@ while true
   input = gets.to_i
   puts input
   if input == 1
-    registration_student
+    registration_student(students)
   elsif input == 2
-    show_student_name
+    show_student_name(students)
   elsif input == 3
-    # アプリケーションを終了させなさい
+    exit
   else
     puts '無効な値です'
   end
