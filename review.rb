@@ -24,6 +24,12 @@ def read_reviews(a_posts)
     puts "[#{num}]:#{post[:title]}のレビュー"
     num += 1
   end
+
+  puts "\n見たいレビューの番号を入力して下さい："
+  input = gets.to_i
+
+  post = a_posts[input]
+  
 end
 
 def end_program
