@@ -29,7 +29,10 @@ def read_reviews(a_posts)
   input = gets.to_i
 
   post = a_posts[input]
-  
+
+  puts "ジャンル：#{post[:genre]}\n#{line}"
+  puts "タイトル：#{post[:title]}\n#{line}"
+  puts "感想：\n#{post[:review]}\n#{line}"
 end
 
 def end_program
