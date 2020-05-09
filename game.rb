@@ -9,3 +9,12 @@ def register game
 
   games << game
 end
+
+def show games(games)
+  index = 1
+  games.each do |game|
+    puts "#{index}:#{game[:title]}"
+    index += 1
+  end
+  
+end
