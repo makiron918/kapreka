@@ -16,5 +16,7 @@ def show games(games)
     puts "#{index}:#{game[:title]}"
     index += 1
   end
-  
+  puts "見たいゲームの番号を入力してください"
+  input = gets.to_i - 1
+  game = games[input]
 end
