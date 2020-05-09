@@ -1,4 +1,4 @@
-def register game
+def register game(games)
   game = {}
   puts "ゲームのジャンルを入力してください："
   game[:genre] = gets.chomp
@@ -19,4 +19,9 @@ def show games(games)
   puts "見たいゲームの番号を入力してください"
   input = gets.to_i - 1
   game = games[input]
+  puts "ゲームのジャンル：#{game[:genre]}"
+  puts "ゲームのハード：#{game[:platform]}"
+  puts "ゲームのタイトル：#{game[:title]}"
 end
+
+games = []
