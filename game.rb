@@ -1,4 +1,4 @@
-def register game(games)
+def register_game(games)
   game = {}
   puts "ゲームのジャンルを入力してください："
   game[:genre] = gets.chomp
@@ -10,7 +10,7 @@ def register game(games)
   games << game
 end
 
-def show games(games)
+def show_games(games)
   index = 1
   games.each do |game|
     puts "#{index}:#{game[:title]}"
@@ -25,3 +25,18 @@ def show games(games)
 end
 
 games = []
+
+while true do
+  puts "番号を入力してください"
+  puts "[1]ゲームを登録する"
+  puts "[2]ゲーム一覧を表示する"
+  puts "[3]プログラムを終了する"
+  case gets.to_i
+  when 1
+    register_game(games)
+  when 2
+    show_games(games)
+  when 3
+    exit
+  end
+end
