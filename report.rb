@@ -20,5 +20,6 @@ exam = gets.split
         ranks.push("D")
     end
 end
-
-puts ranks
+ranks.each do |rank|
+  puts "評価は#{rank}です"
+end
