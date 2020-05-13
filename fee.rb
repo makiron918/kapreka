@@ -12,5 +12,6 @@ money = card[0].to_i
     money = money - fee
     points += point
   end
+  # 累計ポイントが運賃を上回った時は、ポイントから運賃を支払う
   puts money, points
 end
