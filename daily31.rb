@@ -11,3 +11,10 @@ class Person
   end
 end
 
+class Student < class Person
+
+class Student
+  def introduce
+    puts "私の名前は#{@name}です。#{@age}歳です。"
+  end
+end
