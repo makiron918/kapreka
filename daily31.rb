@@ -1,8 +1,8 @@
-# puts "何回表示させますか？"
-# input = gets.to_i
-# input.times do
-#   puts "Hello"
-# end
+puts "何回表示させますか？"
+input = gets.to_i
+input.times do
+  puts "Hello"
+end
 
 class Person
   def initialize(name, age)
