@@ -6,4 +6,8 @@ end
 
 class Person
   def initialize(name, age)
-    @name 
+    @name = name
+    @age = age
+  end
+end
+
