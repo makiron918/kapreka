@@ -14,7 +14,7 @@
     <h2>Practice</h2>
     <pre>
       <?php
-      print('hello');
+      print('PHPを勉強中です！');
       ?>
     </pre>
   </main>
