@@ -6,7 +6,16 @@
 # # 01num = 6
 # num01 = 123
 # num02 = 1.23
+# string_a = "Hello,World!"
+a = [["sato", "suzuki"], ["takahashi", "tanaka"]]
 
+print(a[0][0])
+print(a[0][1])
+print(a[1][0])
+print(a[1][1])
+
+# print(string_a)
+# print(type(string_a))
 # print(num)
 # print(num01)
 # print(num_01)
