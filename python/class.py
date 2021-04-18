@@ -34,7 +34,7 @@ class Student:
     return result
 
 a001 = Student("sato")
-date = [70,65,50,90,30]
+date = [70,65,50,10,30]
 avg = a001.calculate_avg(date)
 result = a001.judge(avg)
 
