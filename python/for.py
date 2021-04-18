@@ -21,7 +21,7 @@
 # print(add_result)
 
 def average(num01, num02, num03):
-  return((num1 + num02 + num03)/3)
+  return (num01 + num02 + num03) / 3
 
 average_result = average(9, 4, 2)
 print(average_result)
